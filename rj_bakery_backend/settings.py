@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 load_dotenv()
 
@@ -45,9 +48,9 @@ INSTALLED_APPS = [
     # INSTALLED APPS
     'rest_framework',
     'corsheaders',
-    'products',
     'cloudinary_storage',
     'cloudinary',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -126,9 +129,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# Media files (user uploaded images)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
 #CORS Settings - Cross Origin
@@ -139,15 +140,15 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:4173",
 ]
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+
 
 cloudinary.config(
     cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
     api_key=os.environ.get('CLOUDINARY_API_KEY'),
     api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
 )
+
+print("CLOUDINARY CONFIG:", cloudinary.config().cloud_name)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 

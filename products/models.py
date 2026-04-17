@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from cloudinary_storage.storage import MediaCloudinaryStorage
+
 # Create your models here.
 
 class Product(models.Model):
@@ -30,7 +32,7 @@ class Product(models.Model):
     average_rating = models.DecimalField(max_digits=3, decimal_places=1, default=0.0)
     total_no_of_ratings = models.IntegerField(default=0)
     sum_ratings = models.IntegerField(default=0)
-    image = models.ImageField(upload_to='food_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='food_images/',storage=MediaCloudinaryStorage(), blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.total_no_of_ratings > 0:
