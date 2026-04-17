@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('svg_17-ad_4/admin/ret-57-pRZwy', admin.site.urls),
     path('',include('products.urls'))
 ]
 
