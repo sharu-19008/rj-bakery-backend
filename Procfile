@@ -1,0 +1,1 @@
+web: gunicorn rj_bakery_backend.wsgi
