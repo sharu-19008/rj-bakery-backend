@@ -44,6 +44,8 @@ def product_list(request):
             products = products.order_by('-average_rating')
         else:
             products = products.order_by('name')
+    else:
+        products = products.order_by('name')
     
     #Pagination - Send 10 products at a time by adding pages
     paginator = ProductPagination()
