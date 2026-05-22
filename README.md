@@ -37,6 +37,8 @@ RJ Bakery Backend is a Django REST API that powers a bakery product catalogue. I
 
 ## Required Environment Variables (`.env.example`)
 
+## Environment Variables
+
 Create a `.env` file in the project root and add the following:
 
 ```env
@@ -58,6 +60,7 @@ CLOUDINARY_API_SECRET=your_api_secret
 
 # CORS (add your frontend URL)
 CORS_ALLOWED_ORIGINS=http://localhost:5173,https://your-frontend.netlify.app
+```
 
 ## Deployment
 - Backend hosted on Render (free tier)
