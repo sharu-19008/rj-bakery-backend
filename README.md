@@ -53,7 +53,7 @@ DATABASE_URL=sqlite:///db.sqlite3
 # For PostgreSQL (optional – uncomment and update if you prefer)
 # DATABASE_URL=postgresql://postgres:password@localhost:5432/your_db_name
 
-# Cloudinary (image storage – required for uploads)
+# Cloudinary (image storage – required for image upload to database)
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
