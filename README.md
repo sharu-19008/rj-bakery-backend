@@ -37,8 +37,6 @@ RJ Bakery Backend is a Django REST API that powers a bakery product catalogue. I
 
 ## Required Environment Variables (`.env.example`)
 
-## Environment Variables
-
 Create a `.env` file in the project root and add the following:
 
 ```env
