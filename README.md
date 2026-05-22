@@ -36,14 +36,28 @@ RJ Bakery Backend is a Django REST API that powers a bakery product catalogue. I
 8. Run server: `python manage.py runserver`
 
 ## Required Environment Variables (`.env.example`)
-DJANGO_SECRET_KEY=your_secret_key
+
+Create a `.env` file in the project root and add the following:
+
+```env
+# Django
+DJANGO_SECRET_KEY=your-secret-key-here
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
-DATABASE_URL=postgresql://... (your postgresql conntection string)
+
+# Database – SQLite works out of the box (no extra setup)
+DATABASE_URL=sqlite:///db.sqlite3
+
+# For PostgreSQL (optional – uncomment and update if you prefer)
+# DATABASE_URL=postgresql://postgres:password@localhost:5432/your_db_name
+
+# Cloudinary (image storage – required for uploads)
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-CORS_ALLOWED_ORIGINS=http://localhost:5173,https://rj-bakery.netlify.app
+
+# CORS (add your frontend URL)
+CORS_ALLOWED_ORIGINS=http://localhost:5173,https://your-frontend.netlify.app
 
 ## Deployment
 - Backend hosted on Render (free tier)
